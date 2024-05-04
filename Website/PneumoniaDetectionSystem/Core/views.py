@@ -13,8 +13,8 @@ def homePage(request):
                 for chunk in uploaded_image.chunks():
                     f.write(chunk)
 
-            model_path = 'D:\Coding\Repos\HWCS\knn_model.joblib'
-            scaler_path = 'D:\Coding\Repos\HWCS\scaler.joblib'
+            model_path = 'E:\HWCS\knn_model.joblib'
+            scaler_path = 'E:\HWCS\scaler.joblib'
             model = load_trained_model(model_path)
             scaler = load(scaler_path)
 
