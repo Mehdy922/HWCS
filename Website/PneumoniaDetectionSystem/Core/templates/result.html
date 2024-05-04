@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading Animation</title>
+  <link rel="stylesheet" href="{% static 'result.css' %}">
+</head>
+<body>
+  <div class="container">
+    <div class="checking-message">
+      <h1>Checking Writers Identity...</h1>
+    </div>
+    <div class="loading-container">
+      <div class="loading-bar"></div>
+    </div>
+  </div>
+
+  <div class="content hidden">
+    <!-- Your page content goes here -->
+    <div class="result-section">
+        <h2>Result</h2>
+        
+        <p id="result-statement">{{ prediction_result }}</p>
+      </div>
+    
+      <div class="disclaimer-section">
+        <h3>Disclaimer</h3>
+        <p class="disclaimer">Please note that our handwriting classification system utilizes cutting-edge artificial intelligence technology to analyze and identify handwriting styles. While our program strives to provide accurate results, it's important to understand that no system can guarantee 100% accuracy. Handwriting can vary greatly, and our AI model may occasionally produce results that are not entirely precise. Therefore, we encourage users to interpret the output with discretion and consider it as a close estimation rather than an absolute determination. We continuously work to improve the accuracy of our system and appreciate your understanding as we evolve our technology.</p>
+      </div>
+    </div>
+    
+
+  <div class="facts">
+    <h2> Here are some interesting facts about Handwriting</h2>
+    <ul>
+      <li>Handwriting is as unique as a fingerprint. No two people have exactly the same handwriting style.</li>
+      <li>Handwriting has played a crucial role throughout history, from ancient civilizations to modern times.</li>
+      <li>Handwriting styles vary significantly across different cultures and languages.</li>
+      <li>Handwriting is not just a means of communication but also a form of artistic expression.</li>
+      <li>Handwriting can have a profound psychological impact on individuals.</li>
+    </ul>
+  </div>
+
+  <div class="suggestions">
+    <h2>Here are some tips for improving handwriting:</h2>
+    <ol>
+      <li>Like any skill, handwriting improves with practice. Set aside time each day to practice writing neatly and consistently.</li>
+      <li>Grip the pen or pencil with your fingers, not too tightly, and ensure a comfortable and relaxed grip. Experiment with different grips to find what works best for you.</li>
+      <li>Periodically review your handwriting and identify areas for improvement. Reflect on what techniques are working well and where you can make adjustments.</li>
+      <li>Keep your hand and arm relaxed while writing. Tension can affect handwriting quality and lead to discomfort. Take breaks if you feel your hand getting tired.</li>
+      <li>Take your time when writing to ensure accuracy and legibility. Rushing can lead to sloppy handwriting and mistakes. Focus on each stroke and maintain a steady pace.</li>
+    </ol>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Simulate loading delay
+      setTimeout(function() {
+        // Hide checking message and loading animation
+        document.querySelector('.checking-message').style.display = 'none';
+        document.querySelector('.loading-container').style.display = 'none';
+        document.querySelector('.facts').style.display = 'none';
+        document.querySelector('.suggestions').style.display = 'none';
+        // Show content
+        document.querySelector('.content').classList.remove('hidden');
+      }, 5500); // Change the delay time (in milliseconds) as needed
+    });
+  </script>
+</body>
+</html>
