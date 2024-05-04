@@ -1,2 +1,0 @@
-# HWCS
-AI project
